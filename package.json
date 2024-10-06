@@ -1,6 +1,7 @@
 {
   "name": "diploma-fe-64",
   "private": true,
+  "homepage": "https://andreizak90.github.io/diploma-Frontend/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
