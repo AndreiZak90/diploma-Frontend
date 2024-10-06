@@ -8,9 +8,12 @@ function App() {
   return (
     <>
       <Header />
-      <Routes>
-        <Route exact path="/" element={<MainPage />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route exact path="/" element={<MainPage />} />
+        </Routes>
+      </main>
+
       <Footer />
     </>
   );

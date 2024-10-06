@@ -121,10 +121,26 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 21px;
+  color: $black;
 }
 
 .point_icon {
   background: url("../../../images//icon/icon_point.png") no-repeat $white;
-  background-position: 293px 17px;
-  padding-right: 17px;
+  background-position: center right 20px;
+}
+
+.date {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+.date::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  display: block;
+  background: url("../../../images//icon/icon_calendar.png") no-repeat;
+  width: 30px;
+  height: 30px;
+  border-width: thin;
 }
