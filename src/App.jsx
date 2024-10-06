@@ -9,7 +9,7 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/diploma-Frontend" element={<MainPage />} />
+        <Route path="/" element={<MainPage />} />
       </Routes>
       <Footer />
     </>
