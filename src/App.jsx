@@ -9,7 +9,7 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<MainPage />} />
+        <Route exact path="/" element={<MainPage />} />
       </Routes>
       <Footer />
     </>
