@@ -1,0 +1,52 @@
+@use "../../../scss/base/vars" as *;
+
+.review {
+  padding: 120px 0;
+}
+
+.review_box_title {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 42px;
+  text-transform: uppercase;
+  margin-bottom: 70px;
+}
+
+.slider_item {
+  display: flex;
+  gap: 35px;
+}
+
+.slider_item_image {
+  width: 206px;
+}
+
+.slider_item_info {
+  max-width: 400px;
+}
+
+.slider_item_title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.slider_item_box_text {
+  position: relative;
+  display: flex;
+}
+
+.slider_item_text {
+  font-size: 18px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 24px;
+}
+
+.splide__pagination {
+  margin-top: 30px;
+}
+
+.swiper-wrapper {
+  min-height: 337px;
+}

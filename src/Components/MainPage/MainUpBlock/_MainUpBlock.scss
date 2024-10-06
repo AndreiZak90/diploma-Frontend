@@ -1,0 +1,130 @@
+@use "../../../scss/base/vars" as *;
+
+.mainPage__up_block {
+  position: relative;
+  height: 985px;
+}
+
+.mainPage_back_img {
+  position: absolute;
+  height: 100%;
+
+  top: 0;
+  z-index: 5;
+}
+
+.mainPage_info_box {
+  position: absolute;
+  bottom: 0;
+  z-index: 6;
+}
+
+.mainPage_info_title {
+  width: 506px;
+  font-size: 72px;
+  font-weight: 100;
+  line-height: 84px;
+}
+
+.mainPage_info_title_bold {
+  font-weight: 700;
+}
+
+.mainPage_info_box {
+  color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 104px;
+  width: 100%;
+  height: 580px;
+}
+
+.mainPage_form_box {
+  width: 730px;
+  height: 580px;
+  position: relative;
+  padding-top: 79px;
+}
+
+.mainPage_form_box::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: $black;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+.mainForm {
+  padding: 25px;
+}
+
+.mainForm {
+  display: flex;
+  flex-direction: column;
+  gap: 61px;
+}
+
+.mainForm_direction_sub {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 31px;
+}
+
+.mainForm_direction_input_submit {
+  display: block;
+  border: 1px solid $accentOrange;
+  border-radius: 5px;
+  width: 323px;
+  height: 60px;
+  color: $black;
+  background: $accentOrange;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  text-transform: uppercase;
+}
+
+.mainForm_direction_input_submit:hover {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.mainForm_direction_input_submit:active {
+  color: $accentOrange;
+  background: inherit;
+}
+
+.mainForm_direction_title {
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 35px;
+  padding-left: 5px;
+  margin-bottom: 15px;
+}
+
+.mainForm_direction_inputs {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mainForm_direction_input {
+  padding: 10px 21px;
+  width: 325px;
+  height: 60px;
+  background-color: $white;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+.point_icon {
+  background: url("../../../images//icon/icon_point.png") no-repeat $white;
+  background-position: 293px 17px;
+  padding-right: 17px;
+}

@@ -1,0 +1,110 @@
+@use "../../../scss/base/vars" as *;
+
+.howWork {
+  height: 575px;
+  position: relative;
+  color: $white;
+}
+
+.howWork_img_back {
+  max-height: 575px;
+}
+
+.howWork_box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 5;
+}
+
+.howWork_box_up {
+  margin-top: 69px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.howWork_box_up_title {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 42px;
+  text-transform: uppercase;
+}
+
+.howWork_box_up_btn {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  padding: 16px 77px;
+  border: 1px solid $white;
+  border-radius: 5px;
+}
+
+.howWork_box_up_btn:hover {
+  border: 1px solid $accentOrange;
+  background: $accentOrange;
+  color: $black;
+}
+
+.howWork_box_up_btn:active {
+  border: 1px solid $white;
+  background: $white;
+  color: $black;
+}
+
+.howWork_box_info {
+  margin-top: 97px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 200px;
+}
+
+.info_link_img:hover .info_link_image {
+  transform: scale(1.2);
+}
+
+.info_link_img:hover .info_link_img_box {
+  transform: scale(0.8);
+}
+
+.howWork_box_info_link {
+  max-width: 226px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info_link_img {
+  position: relative;
+  transition: transform 0.7s linear;
+  height: 162px;
+  width: 162px;
+  z-index: 2;
+}
+
+.info_link_img_box {
+  opacity: 0.2;
+  z-index: 3;
+  display: block;
+  height: 162px;
+  width: 162px;
+  background: $white;
+  border-radius: 50%;
+  transition: transform 0.7s linear;
+}
+
+.info_link_image {
+  position: absolute;
+  top: calc(50% - 67px);
+  left: calc(50% - 67px);
+  width: 134px;
+  height: 134px;
+  transition: transform 0.7s linear;
+}
+
+.info_link_text {
+  text-align: center;
+  margin-top: 34px;
+}
