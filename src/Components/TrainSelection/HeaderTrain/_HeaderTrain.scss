@@ -1,0 +1,33 @@
+@use "../../../scss/base/vars" as *;
+
+.header_train {
+  position: relative;
+  height: 596px;
+}
+
+.header_train_img_back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  z-index: 5;
+}
+
+.train_form_box {
+  width: 1490px;
+  height: 350px;
+  position: absolute;
+  left: auto;
+  right: auto;
+  bottom: 0;
+  color: $white;
+  z-index: 6;
+}
+
+.mainForm_train {
+  flex-direction: row;
+}
+
+.mainForm_direction_train {
+  flex-direction: column;
+}

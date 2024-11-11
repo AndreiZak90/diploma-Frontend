@@ -1,52 +1,39 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import "./_MainUpBlock.scss";
+import "./_HeaderTrain.scss";
 
-import back from "../../../images/Background/Background_main.png";
+import back from "../../../images/Background/TrainSection.png";
 import revers from "../../../images/icon/icon_revers.png";
 
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import cityListmass from "./cityList";
+import { useSelector, useDispatch } from "react-redux";
+import cityListmass from "../../MainPage/MainUpBlock/cityList";
 import { addValueDirection } from "../../../Redux/slices/orderSlice";
 
-export default function MainUpBlock() {
+export default function HeaderTrain() {
   const dispatch = useDispatch();
-  const { hash } = useLocation();
-
-  useEffect(() => {
-    if (hash) {
-      const element = document.getElementById(hash.replace("#", ""));
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  }, [hash]);
-
-  const [whereAre, setWhereAre] = useState("");
-  const [where, setWhere] = useState("");
-  const [cityIn, setCityIn] = useState("");
-  const [cityEnd, setCityEnd] = useState("");
-  const [dataValue, setDataValue] = useState("");
-  const [werDataValue, setWerDataValue] = useState("");
+  const { direction } = useSelector((state) => state.order);
+  const [whereAre, setWhereAre] = useState(direction.cityEnd.name);
+  const [where, setWhere] = useState(direction.cityIn.name);
+  const [dataValue, setDataValue] = useState(direction.dateIn);
+  const [werDataValue, setWerDataValue] = useState(direction.dateEnd);
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenAre, setIsOpenAre] = useState(false);
   const [cityList, setCityList] = useState(cityListmass);
 
   const form = {
-    cityIn: cityIn,
-    cityEnd: cityEnd,
+    cityIn: where,
+    cityEnd: whereAre,
     dateIn: dataValue,
     dateEnd: werDataValue,
   };
 
   useEffect(() => {
     dispatch(addValueDirection(form));
-  }, [form]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [where, whereAre, dataValue, werDataValue]);
 
   const handleChange = (e) => {
     const value = e.target.value;
-    if (value === "") return;
     setWhere(value);
     fetch(
       `https://students.netoservices.ru/fe-diplom/routes/cities?name=${value}`
@@ -55,9 +42,10 @@ export default function MainUpBlock() {
       .then((data) => setCityList(data));
   };
 
+  console.log(direction);
+
   const handleChangeAre = (e) => {
     const value = e.target.value;
-    if (value === "") return;
     setWhereAre(value);
     fetch(
       `https://students.netoservices.ru/fe-diplom/routes/cities?name=${value}`
@@ -67,15 +55,13 @@ export default function MainUpBlock() {
   };
 
   const handleInputClick = (item) => {
-    setCityIn(item);
-    setWhere(item.name);
+    setWhere(item);
     setIsOpen(false);
     setCityList(cityListmass);
   };
 
   const handleInputAreClick = (item) => {
-    setCityEnd(item);
-    setWhereAre(item.name);
+    setWhereAre(item);
     setIsOpenAre(false);
     setCityList(cityListmass);
   };
@@ -91,14 +77,11 @@ export default function MainUpBlock() {
   const today = new Date().toISOString().split("T")[0];
 
   return (
-    <section className="mainPage__up_block">
-      <img src={back} alt="train" className="mainPage_back_img" />
-      <div className="mainPage_info_box">
-        <h3 className="mainPage_info_title">
-          Вся жизнь - <p className="mainPage_info_title_bold">путешествие!</p>
-        </h3>
-        <div className="mainPage_form_box">
-          <form className="mainForm">
+    <section className="header_train">
+      <img src={back} alt="back" className="header_train_img_back" />
+      <div className="container">
+        <div className="mainPage_form_box train_form_box">
+          <form className="mainForm mainForm_train">
             <div className="mainForm_direction">
               <p className="mainForm_direction_title">Направление</p>
               <div className="mainForm_direction_inputs_up">
@@ -157,7 +140,7 @@ export default function MainUpBlock() {
                 </div>
               </div>
             </div>
-            <div className="mainForm_direction">
+            <div className="mainForm_direction mainForm_direction_train">
               <p className="mainForm_direction_title">Дата</p>
               <div className="mainForm_direction_inputs">
                 <input
@@ -175,11 +158,11 @@ export default function MainUpBlock() {
                   min={dataValue}
                 />
               </div>
-            </div>
-            <div className="mainForm_direction_sub">
-              <button className="mainForm_direction_input_submit">
-                <Link to="/trainSelection">найти билеты</Link>
-              </button>
+              <div className="mainForm_direction_sub">
+                <button className="mainForm_direction_input_submit">
+                  <Link to="/trainSelection">найти билеты</Link>
+                </button>
+              </div>
             </div>
           </form>
         </div>

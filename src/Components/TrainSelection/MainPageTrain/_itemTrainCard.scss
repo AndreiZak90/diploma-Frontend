@@ -1,0 +1,50 @@
+@use "../../../scss/base/reset" as *;
+@use "../../../scss/base/vars" as *;
+
+.itemCard {
+  width: 960px;
+  border: 1px solid rgb(196, 196, 196);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.3);
+}
+
+.itemCard__numberTrain {
+  display: flex;
+}
+
+.itemCard__numberTrain_up {
+  background: $backgroundCard;
+  max-width: 196px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemCard__numberTrain_nameInCity_arrow {
+  margin-top: 6px;
+}
+
+.itemCard__numberTrain_nameCity {
+  max-width: 150px;
+  padding: 0 25px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+}
+
+.itemCard__infoTrain {
+  display: flex;
+}
+
+.itemCard__numberTrain__timeStation {
+  display: flex;
+}
+
+.timeStation_on {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeStation_price_box_item_place_value {
+  display: flex;
+}

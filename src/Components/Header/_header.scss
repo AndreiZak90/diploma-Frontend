@@ -39,8 +39,12 @@
 
 .header__main_link {
   color: $white;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 35px;
 }
 
 .header__main_link:hover {
   color: $accentOrange;
+  text-decoration: none;
 }

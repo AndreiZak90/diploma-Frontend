@@ -59,7 +59,7 @@ export default function Footer() {
                   className="footer__main_item_img"
                 />
                 <p className="footer__main_item_text">
-                  <a className="footer__main_item_text_phone">
+                  <a href="!#" className="footer__main_item_text_phone">
                     г. Москва ул. Московская 27-35 555 555
                   </a>
                 </p>

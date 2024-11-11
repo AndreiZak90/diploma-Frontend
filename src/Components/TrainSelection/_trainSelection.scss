@@ -1,0 +1,27 @@
+@use "../../scss/base/vars" as *;
+
+.train_settings {
+  padding: 95px 44px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.box_trian_list {
+  max-width: 959px;
+  width: 100%;
+}
+
+.box_trian_list_count {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+  color: $grey;
+}
+
+.LoadBox {
+  width: 100%;
+}
+
+.loadBox__img {
+  width: 100%;
+}

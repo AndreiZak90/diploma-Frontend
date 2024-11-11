@@ -33,8 +33,9 @@
   line-height: 28px;
 }
 
-.footer__main_item:hover {
+.footer__main_item_text_phone:hover {
   color: $accentOrange;
+  text-decoration: none;
 }
 
 .footer__main_item_img {
@@ -72,6 +73,20 @@
   border: 1px solid $white;
   text-transform: uppercase;
   padding: 0 19px;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.footer_subscription_btn:hover {
+  border: 1px solid $accentOrange;
+  background: $accentOrange;
+  color: $black;
+}
+
+.footer_subscription_btn:active {
+  border: 1px solid $white;
+  background: $white;
+  color: $black;
 }
 
 .footer__main_mail_massengers {

@@ -3,13 +3,15 @@
 .mainPage__up_block {
   position: relative;
   height: 985px;
+  margin: 0 auto;
 }
 
 .mainPage_back_img {
   position: absolute;
   height: 100%;
-
   top: 0;
+  left: auto;
+  right: auto;
   z-index: 5;
 }
 
@@ -60,13 +62,10 @@
 }
 
 .mainForm {
-  padding: 25px;
-}
-
-.mainForm {
   display: flex;
   flex-direction: column;
   gap: 61px;
+  padding: 25px;
 }
 
 .mainForm_direction_sub {
@@ -87,10 +86,15 @@
   font-weight: 700;
   line-height: 28px;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .mainForm_direction_input_submit:hover {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 .mainForm_direction_input_submit:active {
@@ -106,11 +110,20 @@
   margin-bottom: 15px;
 }
 
+.mainForm_direction_inputs_up {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 7px;
+}
+
 .mainForm_direction_inputs {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 35px;
 }
 
 .mainForm_direction_input {
@@ -143,4 +156,31 @@
   width: 30px;
   height: 30px;
   border-width: thin;
+  cursor: pointer;
+}
+
+.mainForm_direction_input_box {
+  position: relative;
+}
+
+.mainForm_direction_input_list_box {
+  position: absolute;
+  left: 0;
+  top: 65px;
+  width: 100%;
+  padding: 15px 28px;
+  background: $backgroundList;
+  color: $black;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+.mainForm_direction_input_list {
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.mainForm_direction_input_list:hover {
+  color: $accentOrange;
 }

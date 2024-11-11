@@ -15,18 +15,18 @@ export default function Header() {
       <div className="header__main_links">
         <div className="container">
           <div className="main_links_box">
-            <a href="#aboutUs" className="header__main_link">
+            <Link to="/#aboutUs" className="header__main_link">
               О нас
-            </a>
-            <a href="#howWork" className="header__main_link">
+            </Link>
+            <Link to="/#howWork" className="header__main_link">
               Как это работает
-            </a>
-            <a href="#review" className="header__main_link">
+            </Link>
+            <Link to="/#review" className="header__main_link">
               Отзывы
-            </a>
-            <a href="#footer" className="header__main_link">
+            </Link>
+            <Link to="/#footer" className="header__main_link">
               Контакты
-            </a>
+            </Link>
           </div>
         </div>
       </div>

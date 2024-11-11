@@ -1,0 +1,108 @@
+@use "../../../scss/base/vars" as *;
+
+.chain {
+  position: relative;
+  min-height: 94px;
+  z-index: 10;
+}
+
+.chain_box {
+  position: absolute;
+  top: -6px;
+  display: flex;
+  width: 100%;
+}
+
+.chain_item {
+  background-color: $chainBox;
+  color: white;
+  text-align: center;
+  position: relative;
+  min-height: 100px;
+}
+
+.chain_item {
+  width: 300px;
+  padding: 20px 10px;
+  position: relative;
+  background: $chainBox;
+  border: 1px solid $white;
+  text-align: center;
+}
+
+.chain_item_back:after {
+  content: "";
+  position: absolute;
+  width: 37px;
+  left: -40px;
+  top: 0;
+  border: 49px solid $chainBox;
+  border-left: 37px solid transparent;
+}
+
+.chain_item_back_active:after {
+  content: "";
+  position: absolute;
+  width: 37px;
+  left: -40px;
+  top: 0;
+  border: 49px solid $accentOrange;
+  border-left: 37px solid transparent;
+}
+
+.active_chain {
+  background: $accentOrange;
+}
+
+.side_box {
+  flex: 1;
+}
+
+.centre_box {
+  width: 350px;
+}
+
+.chain_item_vector {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 37px;
+}
+
+.chain_block_text {
+  position: absolute;
+  top: -6px;
+  height: 100px;
+  width: 1440px;
+  z-index: 12;
+  display: flex;
+  color: $white;
+}
+
+.chain_item_name {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 340px;
+  margin-left: 30px;
+}
+
+.chain_item_name_num {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $white;
+  border-radius: 50%;
+  margin-right: 20px;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 42px;
+}
+
+.chain_item_name_text {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 35px;
+}

@@ -1,0 +1,183 @@
+@use "../../../scss/base/vars" as *;
+
+.placeSetting {
+  color: $white;
+  background: $chainBox;
+  max-width: 360px;
+  width: 100%;
+}
+
+.placeSettingPad {
+  padding: 30px 28px;
+}
+
+.placeSetting_date {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  border-bottom: 1px solid $white;
+}
+
+.placeSetting_date_title {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 35px;
+  letter-spacing: 0%;
+  margin-bottom: 8px;
+}
+
+.choiceCarriage_item_img {
+  width: 17px;
+}
+
+.choiceCarriage_item_text {
+  width: 80px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+.placeSetting_date_input {
+  max-width: 295px;
+  width: 100%;
+  padding: 8px 11px;
+  background: $white;
+  border-radius: 3px;
+  color: $black;
+}
+
+.placeSetting_choiceCarriage {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 25px 60px;
+  border-bottom: 1px solid $white;
+}
+
+.choiceCarriage_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.choiceCarriage_item_input {
+  visibility: hidden;
+}
+
+.choiceCarriage_item_checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.choiceCarriage_item_span {
+  position: relative;
+  display: block;
+  width: 72px;
+  height: 19px;
+  cursor: pointer;
+  background-color: $white;
+  border-radius: 10px;
+  transition: all 0.6s;
+}
+
+.choiceCarriage_item_checkbox input:checked + .choiceCarriage_item_span {
+  background-color: $checkSwadow;
+}
+
+.choiceCarriage_item_span::before {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background-color: $grey;
+  border-radius: 50%;
+  top: -4px;
+  left: 0;
+  transition: transform 0.6s;
+}
+
+.choiceCarriage_item_checkbox
+  input:checked
+  + .choiceCarriage_item_span::before {
+  transform: translateX(45px);
+  background-color: $accentOrange;
+}
+
+.slid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.slider-values {
+  display: flex;
+  justify-content: space-between;
+  width: 300px; /* Должен соответствовать ширине слайдера */
+  font-weight: bold;
+}
+
+.rs-slider {
+  max-width: 290px;
+  height: 19px;
+  appearance: none;
+}
+
+.rs-slider .rs-slider-bar {
+  height: 19px;
+  width: 294px;
+  border-radius: 8px;
+  background-color: inherit;
+  border: 1px solid $white;
+}
+
+.rs-slider:hover .rs-slider-bar {
+  background-color: inherit;
+}
+
+.rs-slider .rs-slider-progress-bar {
+  background-color: $accentOrange;
+  height: 17px;
+}
+
+.rs-slider .rs-slider-handle::before {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  top: 7px;
+  border: none;
+}
+
+.price__text_min_max {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.price__text_min_max_text {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+.price__value_min_max {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price__value_min_max_value {
+  font-size: 16px;
+  line-height: 19px;
+  margin-top: 8px;
+}
+
+.rs-slider .rs-slider-handle::before {
+  display: block;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.rs-slider .rs-slider-handle:hover::before {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
