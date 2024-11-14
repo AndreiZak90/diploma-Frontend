@@ -1,14 +1,14 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { sortTrain } from "../setting";
 
 export const fetchList = createAsyncThunk(
-  "order/settingTrain",
+  "order/allTrain",
   async (direction) => {
     const response = await axios.get(
-      `https://students.netoservices.ru/fe-diplom/routes?from_city_id=${direction.cityEnd._id}&to_city_id=${direction.cityIn._id}&date_start=${direction.dateIn}&date_start_arrival=${direction.dateEnd}`
+      `https://students.netoservices.ru/fe-diplom/routes?limit=15&from_city_id=${direction.cityEnd._id}&to_city_id=${direction.cityIn._id}&date_start=${direction.dateIn}&date_start_arrival=${direction.dateEnd}`
     );
-    console.log(direction);
-    console.log(response.data);
+    console.log(response.data.items);
     return response.data;
   }
 );
@@ -17,10 +17,18 @@ const orderSlice = createSlice({
   name: "order",
   initialState: {
     direction: {
-      cityIn: "",
-      cityEnd: "",
+      cityIn: {
+        _id: "",
+        name: "",
+      },
+      cityEnd: {
+        _id: "",
+        name: "",
+      },
       dateIn: "",
       dateEnd: "",
+    },
+    setting: {
       first_class: false, // люкс
       second_class: false, // купе
       third_class: false, // плацкард
@@ -31,7 +39,8 @@ const orderSlice = createSlice({
       maxPrice: "",
     },
 
-    settingTrain: [],
+    allTrain: [],
+    massSetting: [],
     trainCount: "",
     loading: false,
     error: null,
@@ -46,7 +55,7 @@ const orderSlice = createSlice({
     addChecked(state, action) {
       return {
         ...state,
-        direction: { ...state.direction, ...action.payload },
+        setting: { ...state.setting, ...action.payload },
       };
     },
   },
@@ -57,9 +66,10 @@ const orderSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchList.fulfilled, (state, action) => {
-        state.loading = false;
-        state.settingTrain = action.payload.items || [];
+        state.allTrain = action.payload.items;
         state.trainCount = action.payload.total_count;
+        state.massSetting = sortTrain(state.allTrain, state.setting);
+        state.loading = false;
       })
       .addCase(fetchList.rejected, (state, action) => {
         state.direction.loading = false;

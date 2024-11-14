@@ -6,13 +6,6 @@ import rub from "../../../images/trainCard/Valuta.png";
 
 export default function ItemTrainCard(state) {
   const item = state.state;
-  const fourth = (val) => {
-    if (!val) return "0";
-    return val;
-  };
-
-  const massVagon = Object(item.departure.price_info);
-  console.log(massVagon);
 
   const dateIn = new Date(item.departure.from.datetime)
     .toLocaleTimeString()
@@ -72,22 +65,6 @@ export default function ItemTrainCard(state) {
               </div>
             </div>
           </div>
-          {/* <div className="timeStation_price">
-            <div className="timeStation_price_box">
-              <div className="timeStation_price_box_item">
-                <div className="timeStation_price_box_item_place">
-                  <div className="timeStation_price_box_item_place_value">
-                    <p className="timeStation_price_box_item_place_name">
-                      Сидячий
-                    </p>
-                    <p className="timeStation_price_box_item_place_value_count">
-                      {fourth(item.available_seats_info.fourth)}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>

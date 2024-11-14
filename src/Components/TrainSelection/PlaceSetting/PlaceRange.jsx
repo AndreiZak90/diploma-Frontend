@@ -5,7 +5,7 @@ import { RangeSlider } from "rsuite";
 import "rsuite/dist/rsuite.min.css";
 
 export default function PlaceRange() {
-  const { direction, settingTrain } = useSelector((state) => state.order);
+  const { direction } = useSelector((state) => state.order);
 
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(100);

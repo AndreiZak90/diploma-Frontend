@@ -1,27 +1,35 @@
 import Chain from "../Chain/Chain";
 import PlaceSetting from "../PlaceSetting/PlaceSetting";
-import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { fetchList } from "../../../Redux/slices/orderSlice";
+import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 import Loading from "../LoadingBox/Loading";
 import ItemTrainCard from "./ItemTrainCard";
 
 export default function MainPageTrain() {
-  const dispatch = useDispatch();
-  const { settingTrain, trainCount, direction, loading, error } = useSelector(
+  const { allTrain, setting, trainCount, loading, error } = useSelector(
     (state) => state.order
   );
+  const [mass, setMass] = useState(allTrain);
+
+  const sortTrain = (list, dop) => {
+    if (list === []) return list;
+    console.log(list);
+    console.log(dop);
+
+    return list.filter(
+      (item) => item.departure.have_first_class === dop.first_class
+    );
+  };
 
   useEffect(() => {
-    dispatch(fetchList(direction));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [direction]);
+    setMass(sortTrain(allTrain, setting));
+  }, [allTrain, setting]);
 
   return (
     <>
       {loading && <Loading />}
       {error && <p>Ошибка</p>}
-      {
+      {allTrain && (
         <div className="main_block">
           <Chain pos={1} />
           <div className="container">
@@ -30,7 +38,7 @@ export default function MainPageTrain() {
               <div className="box_trian_list">
                 <p className="box_trian_list_count">найдено: {trainCount}</p>
                 <div className="train_list">
-                  {settingTrain.map((item, idx) => (
+                  {mass.map((item, idx) => (
                     <ItemTrainCard key={idx} state={item} />
                   ))}
                 </div>
@@ -38,7 +46,7 @@ export default function MainPageTrain() {
             </div>
           </div>
         </div>
-      }
+      )}
     </>
   );
 }
